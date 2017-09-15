@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:planets/GradientAppBar.dart';
+import 'package:planets/PlanetList.dart';
+import 'package:planets/model/Planet.dart';
 import 'package:planets/model/Planets.dart';
 
 class HomePage extends StatelessWidget {
@@ -30,15 +32,7 @@ class _HomePageBodyState extends State<HomePageBody> {
 }
 
 
-class PlanetList extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return  new Flexible(
-      child: new ListView.builder(
-        itemCount: planets.length,
-        itemBuilder: (_, index) => new Image(image: new AssetImage(planets[index].image)),
-      ),
-    );
-  }
-}
+
+
+
 
