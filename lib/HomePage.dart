@@ -1,25 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:planets/GradientAppBar.dart';
+import 'package:planets/model/Planets.dart';
 
 class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: new Column(
-        children: <Widget>[
-          new GradientAppBar("planets"),
-          new PlanetList(),
-        ],
-      ),
+      body: new HomePageBody(),
     );
   }
 }
 
+class HomePageBody extends StatefulWidget {
+  @override
+  _HomePageBodyState createState() => new _HomePageBodyState();
+}
+
+class _HomePageBodyState extends State<HomePageBody> {
+  @override
+  Widget build(BuildContext context) {
+    return new Column(
+      children: <Widget>[
+        new GradientAppBar("planets"),
+        new PlanetList(),
+      ],
+    );
+  }
+}
+
+
 class PlanetList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Container();
+    return  new Flexible(
+      child: new ListView.builder(
+        itemCount: planets.length,
+        itemBuilder: (_, index) => new Image(image: new AssetImage(planets[index].image)),
+      ),
+    );
   }
 }
 
