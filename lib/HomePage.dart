@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:planets/GradientAppBar.dart';
 import 'package:planets/PlanetList.dart';
-import 'package:planets/model/Planet.dart';
-import 'package:planets/model/Planets.dart';
 
 class HomePage extends StatelessWidget {
 
@@ -24,7 +22,7 @@ class _HomePageBodyState extends State<HomePageBody> {
   Widget build(BuildContext context) {
     return new Column(
       children: <Widget>[
-        new GradientAppBar("planets"),
+        new GradientAppBar("treva"),
         new PlanetList(),
       ],
     );

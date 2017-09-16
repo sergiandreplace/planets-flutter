@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:planets/Theme.dart';
 import 'package:planets/model/Planet.dart';
 
 class PlanetRow extends StatelessWidget {
@@ -14,14 +15,14 @@ class PlanetRow extends StatelessWidget {
       margin: const EdgeInsets.only(left: 24.0),
       child: new Image(
         image: new AssetImage(planet.image),
-        height: 100.0,
-        width: 100.0,),
+        height: AppTheme.dimens.planetHeight,
+        width: AppTheme.dimens.planetWidth,),
     );
 
     final planetCard = new Container(
       margin: const EdgeInsets.only(left: 74.0, right: 24.0),
       decoration: new BoxDecoration(
-        color: const Color(0xFF434273),
+        color: AppTheme.colors.planetCard,
         shape: BoxShape.rectangle,
         borderRadius: new BorderRadius.circular(15.0),
         boxShadow: <BoxShadow> [
