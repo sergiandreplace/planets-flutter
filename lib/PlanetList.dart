@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:planets/PlanetRow.dart';
-import 'package:planets/Theme.dart';
+import 'package:planets/Theme.dart' as Theme;
 import 'package:planets/model/Planets.dart';
 
 class PlanetList extends StatelessWidget {
@@ -8,9 +8,9 @@ class PlanetList extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Flexible(
       child: new Container(
-        color: AppTheme.colors.planetListBackground,
-        padding: const EdgeInsets.symmetric(vertical: 15.0),
+        color: Theme.Colors.planetListBackground,
         child: new ListView.builder(
+          itemExtent: 160.0,
           itemCount: planets.length,
           itemBuilder: (_, index) => new PlanetRow(planets[index]),
         ),

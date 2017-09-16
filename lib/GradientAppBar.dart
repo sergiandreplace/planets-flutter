@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:planets/Theme.dart';
+import 'package:planets/Theme.dart' as Theme;
 
 class GradientAppBar extends StatelessWidget {
 
@@ -21,12 +21,12 @@ class GradientAppBar extends StatelessWidget {
       child: new Center(
         child: new Text(
           title,
-          style: AppTheme.textStyles.appBarTitle,
+          style: Theme.TextStyles.appBarTitle,
         ),
       ),
       decoration: new BoxDecoration(
         gradient: new LinearGradient(
-          colors: [AppTheme.colors.appBarStart, AppTheme.colors.appBarEnd],
+          colors: [Theme.Colors.appBarStart, Theme.Colors.appBarEnd],
           begin: const FractionalOffset(0.0, 0.0),
           end: const FractionalOffset(0.5, 0.0),
           stops: [0.0, 1.0],

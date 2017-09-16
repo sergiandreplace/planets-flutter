@@ -1,36 +1,60 @@
 import 'package:flutter/material.dart';
 
-class AppTheme {
-  static const colors = const _ThemeColors();
-  static const dimens = const _Dimens();
-  static const textStyles = const _TextStyles();
+class Colors {
+  const Colors();
+
+
+  static const appBarTitle = const Color(0xFFFFFFFF);
+
+  static const Color appBarStart = const Color(0xFF3383FC);
+  static const Color appBarEnd = const Color(0xFF00C6FF);
+  //static const Color planetCard = const Color(0xFF434273);
+  static const Color planetCard = const Color(0xFF8685E5);
+  //static const Color planetListBackground = const Color(0xFF3E3963);
+  static const Color planetListBackground = const Color(0xFF736AB7);
+  static const Color planetTitle = const Color(0xFFFFFFFF);
+  static const Color planetLocation = const Color(0x66FFFFFF);
+  static const Color planetDistance = const Color(0x66FFFFFF);
 }
 
-class _ThemeColors {
+class Dimens {
+  const Dimens();
 
-  const _ThemeColors();
-
-  final Color appBarTitle = const Color(0xFFFFFFFF);
-  final Color appBarStart = const Color(0xFF3383FC);
-  final Color appBarEnd = const Color(0xFF00C6FF);
-  final Color planetCard = const Color(0xFF434273);
-  final Color planetListBackground = const Color(0xFF3E3963);
+  static const planetWidth = 100.0;
+  static const planetHeight = 100.0;
 }
 
-class _Dimens {
-  const _Dimens();
+class TextStyles {
 
-  final planetWidth = 100.0;
-  final planetHeight = 100.0;
-}
+  const TextStyles();
 
-class _TextStyles {
-  const _TextStyles();
-
-  final TextStyle appBarTitle = const TextStyle(
-    color: Colors.white,
+  static const TextStyle appBarTitle = const TextStyle(
+    color: Colors.appBarTitle,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w600,
     fontSize: 36.0
   );
+
+  static const TextStyle planetTitle = const TextStyle(
+    color: Colors.planetTitle,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w600,
+    fontSize: 24.0
+  );
+
+  static const TextStyle planetLocation = const TextStyle(
+    color: Colors.planetLocation,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w300,
+    fontSize: 14.0
+  );
+
+  static const TextStyle planetDistance = const TextStyle(
+    color: Colors.planetDistance,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w300,
+    fontSize: 12.0
+  );
+
+
 }
