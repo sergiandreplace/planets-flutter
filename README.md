@@ -2,7 +2,6 @@
 
 An example for a rich ui on Flutter
 
-## Getting Started
+## Origin
 
-For help getting started with Flutter, view our online
-[documentation](http://flutter.io/).
+I saw a nice UI example in UpLabs.com(https://www.uplabs.com/posts/space-travel-ui) and I decided to try it. Thanks to @realvjy (the author of the design) for the help on implementing it
