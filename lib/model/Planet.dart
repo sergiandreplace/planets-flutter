@@ -1,4 +1,5 @@
 class Planet {
+  final String id;
   final String name;
   final String location;
   final String distance;
@@ -6,7 +7,8 @@ class Planet {
   final String description;
   final String image;
 
-  const Planet({this.name, this.location, this.distance, this.gravity,
+
+  const Planet({this.id, this.name, this.location, this.distance, this.gravity,
     this.description, this.image});
 
 

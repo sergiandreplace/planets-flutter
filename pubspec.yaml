@@ -2,6 +2,7 @@ name: planets
 description: An example for a rich ui on Flutter
 
 dependencies:
+  fluro: "^1.1.0"
   flutter:
     sdk: flutter
 

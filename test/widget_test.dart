@@ -1,28 +1,50 @@
-// This is a basic Flutter widget test.
-// To perform an interaction with a widget in your test, use the WidgetTester utility that Flutter
-// provides. For example, you can send tap and scroll gestures. You can also use WidgetTester to
-// find child widgets in the widget tree, read text, and verify that the values of widget properties
-// are correct.
-
-import 'package:flutter/material.dart';
+/*
+ * fluro
+ * A Posse Production
+ * http://goposse.com
+ * Copyright (c) 2017 Posse Productions LLC. All rights reserved.
+ * See LICENSE for distribution and usage details.
+ */
+import 'package:fluro/fluro.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:planets/ui/home/HomePage.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(new HomePage());
+  testWidgets(
+    "Router correctly parses named parameters", (WidgetTester tester) async {
+    String path = "/users/1234";
+    String route = "/users/:id";
+    Router router = new Router();
+    router.define(route, handler: null);
+    AppRouteMatch match = router.match(path);
+    expect(match?.parameters, equals(<String, String>{
+      "id": "1234",
+    }));
+  });
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  testWidgets("Router correctly parses named parameters with query", (
+    WidgetTester tester) async {
+    String path = "/users/1234?name=luke";
+    String route = "/users/:id";
+    Router router = new Router();
+    router.define(route, handler: null);
+    AppRouteMatch match = router.match(path);
+    expect(match?.parameters, equals(<String, String>{
+      "id": "1234",
+      "name": "luke",
+    }));
+  });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+  testWidgets(
+    "Router correctly parses query parameters", (WidgetTester tester) async {
+    String path = "/users/create?name=luke&phrase=hello%20world&number=7";
+    String route = "/users/create";
+    Router router = new Router();
+    router.define(route, handler: null);
+    AppRouteMatch match = router.match(path);
+    expect(match?.parameters, equals(<String, String>{
+      "name": "luke",
+      "phrase": "hello world",
+      "number": "7",
+    }));
   });
 }

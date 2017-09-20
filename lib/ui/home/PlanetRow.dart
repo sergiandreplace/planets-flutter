@@ -1,4 +1,6 @@
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:planets/Routes.dart';
 import 'package:planets/Theme.dart' as Theme;
 import 'package:planets/model/Planet.dart';
 
@@ -13,10 +15,14 @@ class PlanetRow extends StatelessWidget {
     final planetThumbnail = new Container(
       alignment: new FractionalOffset(0.0, 0.5),
       margin: const EdgeInsets.only(left: 24.0),
-      child: new Image(
-        image: new AssetImage(planet.image),
-        height: Theme.Dimens.planetHeight,
-        width: Theme.Dimens.planetWidth,),
+      child: new Hero(
+        tag: 'planet-icon-${planet.id}',
+        child: new Image(
+          image: new AssetImage(planet.image),
+          height: Theme.Dimens.planetHeight,
+          width: Theme.Dimens.planetWidth,
+        ),
+      ),
     );
 
     final planetCard = new Container(
@@ -47,11 +53,15 @@ class PlanetRow extends StatelessWidget {
             ),
             new Row(
               children: <Widget>[
-                new Icon(Icons.location_on, size: 14.0, color: Theme.Colors.planetDistance),
-                new Text(planet.distance, style: Theme.TextStyles.planetDistance),
+                new Icon(Icons.location_on, size: 14.0,
+                  color: Theme.Colors.planetDistance),
+                new Text(
+                  planet.distance, style: Theme.TextStyles.planetDistance),
                 new Container(width: 24.0),
-                new Icon(Icons.flight_land, size: 14.0, color: Theme.Colors.planetDistance),
-                new Text(planet.gravity, style: Theme.TextStyles.planetDistance),
+                new Icon(Icons.flight_land, size: 14.0,
+                  color: Theme.Colors.planetDistance),
+                new Text(
+                  planet.gravity, style: Theme.TextStyles.planetDistance),
               ],
             )
           ],
@@ -63,7 +73,8 @@ class PlanetRow extends StatelessWidget {
       height: 120.0,
       margin: const EdgeInsets.only(top: 16.0, bottom: 8.0),
       child: new FlatButton(
-        onPressed: () => Navigator.pushNamed(context, "/detail"),
+        onPressed: () => _navigateTo(context, planet.id),
+
         child: new Stack(
           children: <Widget>[
             planetCard,
@@ -71,6 +82,14 @@ class PlanetRow extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  _navigateTo(context, String id) {
+    Routes.navigateTo(
+      context,
+      '/detail/${planet.id}',
+      transition: TransitionType.fadeIn
     );
   }
 }
