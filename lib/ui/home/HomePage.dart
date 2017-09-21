@@ -19,15 +19,27 @@ class HomePageBody extends StatefulWidget {
 
 class _HomePageBodyState extends State<HomePageBody> {
 
+  ScrollController controller = new ScrollController();
+
+  double _value = 0.0;
 
   @override
   Widget build(BuildContext context) {
     return new Column(
       children: <Widget>[
         new GradientAppBar("treva"),
-        new PlanetList(),
+        new PlanetList(controller, _value),
       ],
     );
+  }
+
+  @override
+  void initState()  {
+    super.initState();
+    controller.addListener(() {
+      _value = controller.offset;
+      setState(() {});
+    });
   }
 }
 
