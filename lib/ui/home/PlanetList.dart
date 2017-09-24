@@ -11,8 +11,8 @@ class PlanetList extends StatelessWidget {
         color: Theme.Colors.planetPageBackground,
         child: new ListView.builder(
           itemExtent: 160.0,
-          itemCount: planets.length,
-          itemBuilder: (_, index) => new PlanetRow(planets[index]),
+          itemCount: PlanetDao.planets.length,
+          itemBuilder: (_, index) => new PlanetRow(PlanetDao.planets[index]),
         ),
       ),
     );

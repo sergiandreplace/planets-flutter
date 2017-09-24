@@ -6,11 +6,11 @@ import 'package:planets/ui/planet_detail/PlanetDetailBody.dart';
 
 class PlanetDetailPage extends StatelessWidget {
 
-  Planet planet;
+  final Planet planet;
 
-  PlanetDetailPage(String id) {
-    planet = getPlanetById(id);
-  }
+  PlanetDetailPage(String id) :
+    planet = PlanetDao.getPlanetById(id);
+
 
 
   @override
