@@ -10,14 +10,14 @@ class GradientAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double statusbarHeight = MediaQuery
+    final double statusBarHeight = MediaQuery
       .of(context)
       .padding
       .top;
 
     return new Container(
-      padding: new EdgeInsets.only(top: statusbarHeight),
-      height: statusbarHeight + barHeight,
+      padding: new EdgeInsets.only(top: statusBarHeight),
+      height: statusBarHeight + barHeight,
       child: new Center(
         child: new Text(
           title,
@@ -26,9 +26,12 @@ class GradientAppBar extends StatelessWidget {
       ),
       decoration: new BoxDecoration(
         gradient: new LinearGradient(
-          colors: [Theme.Colors.appBarGradientStart, Theme.Colors.appBarGradientEnd],
+          colors: [
+            Theme.Colors.appBarGradientStart,
+            Theme.Colors.appBarGradientEnd
+          ],
           begin: const FractionalOffset(0.0, 0.0),
-          end: const FractionalOffset(0.5, 0.0),
+          end: const FractionalOffset(1.0, 0.0),
           stops: [0.0, 1.0],
           tileMode: TileMode.clamp
         ),
