@@ -14,7 +14,7 @@ class PlanetRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final planetThumbnail = new Container(
       alignment: new FractionalOffset(0.0, 0.5),
-      margin: const EdgeInsets.only(left: 24.0),
+      margin: const EdgeInsets.only(left: Theme.Dimens.planetRowHorizontalMargin),
       child: new Hero(
         tag: 'planet-icon-${planet.id}',
         child: new Image(
@@ -26,13 +26,16 @@ class PlanetRow extends StatelessWidget {
     );
 
     final planetCard = new Container(
-      margin: const EdgeInsets.only(left: 72.0, right: 24.0),
+      margin: const EdgeInsets.only(
+        left: Theme.Dimens.planetCardLeftMargin,
+        right: Theme.Dimens.planetCardRightMargin
+      ),
       decoration: new BoxDecoration(
         color: Theme.Colors.planetCard,
         shape: BoxShape.rectangle,
         borderRadius: new BorderRadius.circular(8.0),
         boxShadow: <BoxShadow>[
-          new BoxShadow(color: Colors.black,
+          new BoxShadow(color: Colors.black12,
             blurRadius: 10.0,
             offset: new Offset(0.0, 10.0))
         ],
