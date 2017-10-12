@@ -1,6 +1,6 @@
 import 'package:planets/model/Planet.dart';
-class PlanetDao {
 
+class PlanetDao {
   static final List<Planet> planets = [
     const Planet(
       id: "1",
@@ -50,8 +50,6 @@ class PlanetDao {
   ];
 
   static Planet getPlanetById(id) {
-    return planets
-        .where((p) => p.id == id)
-        .first;
+    return planets.where((p) => p.id == id).first;
   }
 }

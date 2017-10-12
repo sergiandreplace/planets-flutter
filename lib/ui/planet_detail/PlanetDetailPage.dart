@@ -5,13 +5,9 @@ import 'package:planets/ui/planet_detail/DetailAppBar.dart';
 import 'package:planets/ui/planet_detail/PlanetDetailBody.dart';
 
 class PlanetDetailPage extends StatelessWidget {
-
   final Planet planet;
 
-  PlanetDetailPage(String id) :
-    planet = PlanetDao.getPlanetById(id);
-
-
+  PlanetDetailPage(String id) : planet = PlanetDao.getPlanetById(id);
 
   @override
   Widget build(BuildContext context) {

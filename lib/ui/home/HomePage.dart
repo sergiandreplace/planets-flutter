@@ -3,7 +3,6 @@ import 'package:planets/ui/home/GradientAppBar.dart';
 import 'package:planets/ui/home/PlanetList.dart';
 
 class HomePage extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -18,8 +17,6 @@ class HomePageBody extends StatefulWidget {
 }
 
 class _HomePageBodyState extends State<HomePageBody> {
-
-
   @override
   Widget build(BuildContext context) {
     return new Column(
@@ -30,9 +27,3 @@ class _HomePageBodyState extends State<HomePageBody> {
     );
   }
 }
-
-
-
-
-
-
