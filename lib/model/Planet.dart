@@ -7,9 +7,13 @@ class Planet {
   final String description;
   final String image;
 
-
-  const Planet({this.id, this.name, this.location, this.distance, this.gravity,
-    this.description, this.image});
-
-
+  const Planet({
+    this.id,
+    this.name,
+    this.location,
+    this.distance,
+    this.gravity,
+    this.description,
+    this.image,
+  });
 }

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Colors {
-
   const Colors();
-
 
   static const Color appBarTitle = const Color(0xFFFFFFFF);
   static const Color appBarIconColor = const Color(0xFFFFFFFF);
@@ -18,7 +16,6 @@ class Colors {
   static const Color planetTitle = const Color(0xFFFFFFFF);
   static const Color planetLocation = const Color(0x66FFFFFF);
   static const Color planetDistance = const Color(0x66FFFFFF);
-
 }
 
 class Dimens {
@@ -29,36 +26,33 @@ class Dimens {
 }
 
 class TextStyles {
-
   const TextStyles();
 
   static const TextStyle appBarTitle = const TextStyle(
     color: Colors.appBarTitle,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w600,
-    fontSize: 36.0
+    fontSize: 36.0,
   );
 
   static const TextStyle planetTitle = const TextStyle(
     color: Colors.planetTitle,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w600,
-    fontSize: 24.0
+    fontSize: 24.0,
   );
 
   static const TextStyle planetLocation = const TextStyle(
     color: Colors.planetLocation,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w300,
-    fontSize: 14.0
+    fontSize: 14.0,
   );
 
   static const TextStyle planetDistance = const TextStyle(
     color: Colors.planetDistance,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w300,
-    fontSize: 12.0
+    fontSize: 12.0,
   );
-
-
 }
